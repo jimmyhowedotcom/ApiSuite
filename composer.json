@@ -1,25 +1,29 @@
 {
     "name": "jimmyhowedotcom/api-suite",
-    "description": "API Suite",
+    "type": "library",
+    "description": "API Suite for PHP 7",
     "keywords": [
         "api",
-        "xml"
+        "suite"
     ],
+    "homepage": "https://github.com/jimmyhowedotcom/api-suite",
     "license": "MIT",
-    "type": "package",
     "minimum-stability": "dev",
     "authors": [
         {
             "name": "Jimmy Howe",
-            "email": "me@jimmyhowe.com"
+            "email": "me@jimmyhowe.com",
+            "homepage": "https://jimmyhowe.com",
+            "role": "Developer"
         }
     ],
     "require": {
+        "php": ">=7.0",
         "phpunit/phpunit": "7.3.1",
         "illuminate/support": "^5.8@dev"
     },
     "autoload": {
-        "psr-4": {
+        "psr-0": {
             "JimmyHoweDotCom\\ApiSuite\\": "src/"
         }
     }
