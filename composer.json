@@ -1,0 +1,26 @@
+{
+    "name": "jimmyhowedotcom/api-suite",
+    "description": "API Suite",
+    "keywords": [
+        "api",
+        "xml"
+    ],
+    "license": "MIT",
+    "type": "package",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Jimmy Howe",
+            "email": "me@jimmyhowe.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "7.3.1",
+        "illuminate/support": "^5.8@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "JimmyHoweDotCom\\ApiSuite\\": "src/"
+        }
+    }
+}
