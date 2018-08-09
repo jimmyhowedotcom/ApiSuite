@@ -23,7 +23,7 @@
         "illuminate/support": "^5.8@dev"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "JimmyHoweDotCom\\ApiSuite\\": "src/"
         }
     }
