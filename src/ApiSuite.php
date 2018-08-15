@@ -3,6 +3,8 @@
 use JimmyHoweDotCom\ApiSuite\File\FileReader;
 use JimmyHoweDotCom\ApiSuite\Xml\XmlReader;
 use JimmyHoweDotCom\ApiSuite\Xml\XmlReaderException;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 
 /**
  * Class ApiSuite
@@ -11,6 +13,16 @@ use JimmyHoweDotCom\ApiSuite\Xml\XmlReaderException;
  */
 class ApiSuite
 {
+	/**
+	 * @param $data
+	 *
+	 * @return DataReader
+	 */
+	public static function Data($data)
+	{
+		return new DataReader($data);
+	}
+
 	/**
 	 * @param $xml
 	 *
@@ -30,5 +42,15 @@ class ApiSuite
 	public static function File( string $path )
 	{
 		return new FileReader($path);
+	}
+
+	/**
+	 * @param string $root
+	 *
+	 * @return Filesystem
+	 */
+	public static function Disk($root = "/")
+	{
+		return new Filesystem(new Local($root));
 	}
 }
