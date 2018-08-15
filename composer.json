@@ -9,6 +9,7 @@
     "homepage": "https://github.com/jimmyhowedotcom/api-suite",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Jimmy Howe",
