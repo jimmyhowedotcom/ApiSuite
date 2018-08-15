@@ -41,4 +41,22 @@ class FileReader
 	{
 		return file_get_contents($this->path);
 	}
+
+	/**
+	 * @param callable $function
+	 *
+	 * @return mixed
+	 */
+	public function chain(Callable $function)
+	{
+		return $function($this);
+	}
+
+	/**
+	 *
+	 */
+	public function save()
+	{
+		echo "SAVE";
+	}
 }

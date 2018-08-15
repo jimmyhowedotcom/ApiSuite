@@ -49,7 +49,8 @@ class ApiSuite
 	 *
 	 * @return Filesystem
 	 */
-	public static function Disk($root = "/")
+
+	public static function Disk($root = null)
 	{
 		return new Filesystem(new Local($root));
 	}

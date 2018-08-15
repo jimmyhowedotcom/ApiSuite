@@ -1,5 +1,7 @@
 <?php namespace JimmyHoweDotCom\ApiSuite\Xml;
 
+use JimmyHoweDotCom\ApiSuite\ApiSuiteCollection;
+use JimmyHoweDotCom\ApiSuite\Xml\Support\DescribesXml;
 use SimpleXMLElement;
 
 /**
@@ -65,11 +67,11 @@ class XmlReader
 	}
 
 	/**
-	 * @return \Illuminate\Support\Collection
+	 * @return ApiSuiteCollection
 	 */
 	public function toCollection()
 	{
-		return collect($this->toArray());
+		return new ApiSuiteCollection($this->toArray());
 	}
 
 	/**
@@ -78,5 +80,25 @@ class XmlReader
 	public function toArray()
 	{
 		return json_decode(json_encode($this->xml), true);
+	}
+
+	/**
+	 * @param $function
+	 *
+	 * @return mixed
+	 */
+	public function chain( $function )
+	{
+		return $function($this);
+	}
+
+	/**
+	 * @param string $prepend
+	 *
+	 * @return ApiSuiteCollection
+	 */
+	public function toDot($prepend = '')
+	{
+		return $this->toCollection()->toDot($prepend);
 	}
 }
